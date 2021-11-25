@@ -1,0 +1,16 @@
+<h1 class="title-white">Movie Bookmark</h1>
+
+<div class="container">
+  <%= simple_form_for [ @list, @bookmark] do |f| %>
+    <%= f.association :movie, input_html: {class: 'select2'} %>
+    <%= f.input :comment, label: "Review", placeholder: "Leave a review" %>
+    <div class="input-flex">
+      <%= link_to 'Cancel', list_path(@list), class: "btn btn-danger" %>
+      <%= f.submit "Create bookmark", class: "btn btn-info"%>
+    </div>
+  <% end %>
+</div>
+
+<div class="home">
+  <%= link_to 'Return 🏠', lists_path, class: "btn btn-info" %>
+</div>

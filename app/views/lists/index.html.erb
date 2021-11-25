@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <h1 class="display-4">Movie Playlists</h1>
+  <hr class="my-4">
+  <p>Welcome to the movie page!</p>
+  <%= link_to '➕ Movie Playlist', new_list_path, class: "btn btn-light btn-lg" %>
+</div>
+
+<div class="container">
+  <div class="movies">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list.id) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path("#{list.name.downcase}.jpg")%>)"><%= list.name %></div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%# flex list %>

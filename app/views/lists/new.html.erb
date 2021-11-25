@@ -1,0 +1,15 @@
+<h1 class="title-white">New Movie Playlist</h1>
+
+<div class="container input-flex">
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name, label: "Playlist Name" %>
+    <div class="input-flex">
+      <%= link_to 'Cancel', lists_path, class: "btn btn-danger" %>
+      <%= f.submit  class: "btn btn-info"%>
+    </div>
+  <% end %>
+</div>
+
+<div class="home">
+  <%= link_to 'Return 🏠', lists_path, class: "btn btn-info" %>
+</div>
